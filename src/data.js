@@ -37,18 +37,183 @@ const storesDrag = {
     W370: 70,
     W600: 76,
 };
+// const flightProfiles = Object.freeze({
+//     low_420: 0,
+//     low_480: 1,
+//     high: 2,
+//     low_endurance: 3,
+//     low_range: 4,
+//     high_endurance: 5,
+//     high_range: 6,
+// });
 const tasData = {
     low_420: 420,
     low_480: 480,
     high: 480,
 }
+// const maxEndurance = {
+//     false: {
+//         low: {
+//             50: {
+//                 tas: 265,
+//                 fuelflow: 3700,
+//             },
+//             100: {
+//                 tas: 270,
+//                 fuelflow: 4000,
+//             },
+//             150: {
+//                 tas: 265,
+//                 fuelflow: 4200,
+//             },
+//             200: {
+//                 tas: 265,
+//                 fuelflow: 4600,
+//             },
+//         },
+//         high: {
+//             50: {
+//                 tas: 400,
+//                 fuelflow: 3400,
+//             },
+//             100: {
+//                 tas: 380,
+//                 fuelflow: 3600,
+//             },
+//             150: {
+//                 tas: 380,
+//                 fuelflow: 4100,
+//             },
+//             200: {
+//                 tas: 370,
+//                 fuelflow: 4300,
+//             },
+//         }
+//     },
+//     true: {
+//         low: {
+//             50: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             100: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             150: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             200: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//         },
+//         high: {
+//             50: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             100: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             150: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             200: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//         }
+//     },
+// }
+// const maxRange = {
+//     false: {
+//         low: {
+//             50: {
+//                 tas: 360,
+//                 fuelflow: 4600,
+//             },
+//             100: {
+//                 tas: 335,
+//                 fuelflow: 4600,
+//             },
+//             150: {
+//                 tas: 330,
+//                 fuelflow: 4800,
+//             },
+//             200: {
+//                 tas: 320,
+//                 fuelflow: 5000,
+//             },
+//         },
+//         high: {
+//             50: {
+//                 tas: 450,
+//                 fuelflow: 3550,
+//             },
+//             100: {
+//                 tas: 445,
+//                 fuelflow: 4000,
+//             },
+//             150: {
+//                 tas: 450,
+//                 fuelflow: 4400,
+//             },
+//             200: {
+//                 tas: 440,
+//                 fuelflow: 4700,
+//             },
+//         }
+//     },
+//     true: {
+//         low: {
+//             50: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             100: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             150: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             200: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//         },
+//         high: {
+//             50: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             100: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             150: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//             200: {
+//                 tas: 420,
+//                 fuelflow: 2000,
+//             },
+//         }
+//     },
+// }
 const fuelFlowData = {
     // [CFT][profile][DragIndex] = FF(pph)
     // low_420: 420TAS@SL
     // low_480: 480TAS@SL
     // high: 480TAS@FL250(~M0.78)
     false: {
-        low_420: {
+        low_420: { 
             50: 5900,
             100: 6600,
             150: 7250,
