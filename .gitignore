@@ -1,4 +1,6 @@
-._*
+dist/
 node_modules/
 vite.config.js.*
 .DS_Store
+._*
+.env
