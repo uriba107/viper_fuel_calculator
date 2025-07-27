@@ -20,6 +20,9 @@ export default defineConfig(({ command, mode }) => {
   // Use relative paths for flexible deployment
   const base = process.env.VITE_BASE_PATH || './'
 
+  // Set output directory based on mode
+  const outDir = mode === 'github' ? 'docs' : 'dist'
+
   return {
     base,
     plugins,
@@ -29,6 +32,7 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     build: {
+      outDir,
       // Production optimizations
       minify: 'esbuild',
       assetsDir: 'assets',
