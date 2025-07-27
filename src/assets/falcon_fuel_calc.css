@@ -1,0 +1,487 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom F16 Fuel Calculator Color Palette */
+:root {
+  /* Light theme colors */
+  --f16-primary: #2567AB;
+  --f16-primary-dark: #1e5094;
+  --f16-odd-row: #dddde6;
+  --f16-even-row: #d0d0da;
+  --f16-error: #FF9999;
+  --f16-gray-light: #f5f5f5;
+  --f16-gray-medium: #e0e0e0;
+  --f16-gray-dark: #666666;
+  
+  /* Theme-aware colors */
+  --f16-bg-primary: #f8fafc;
+  --f16-bg-secondary: #ffffff;
+  --f16-bg-tertiary: #f1f5f9;
+  --f16-text-primary: #1f2937;
+  --f16-text-secondary: #6b7280;
+  --f16-text-muted: #9ca3af;
+  --f16-border-primary: #e5e7eb;
+  --f16-border-secondary: #d1d5db;
+  --f16-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme colors */
+.dark {
+  --f16-primary: #3b82f6;
+  --f16-primary-dark: #2563eb;
+  --f16-odd-row: #374151;
+  --f16-even-row: #4b5563;
+  --f16-error: #f87171;
+  --f16-gray-light: #1f2937;
+  --f16-gray-medium: #374151;
+  --f16-gray-dark: #9ca3af;
+  
+  /* Theme-aware colors for dark mode */
+  --f16-bg-primary: #0f172a;
+  --f16-bg-secondary: #1e293b;
+  --f16-bg-tertiary: #334155;
+  --f16-text-primary: #f8fafc;
+  --f16-text-secondary: #cbd5e1;
+  --f16-text-muted: #94a3b8;
+  --f16-border-primary: #334155;
+  --f16-border-secondary: #475569;
+  --f16-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom Tailwind utilities for F16 colors */
+.bg-f16-primary {
+  background-color: var(--f16-primary);
+}
+
+.bg-f16-primary-dark {
+  background-color: var(--f16-primary-dark);
+}
+
+.bg-f16-dcs {
+  background-color: #333;
+}
+
+.bg-f16-bms {
+  background-color: #163546;
+}
+
+/* Dark theme variants for DCS/BMS */
+.dark .bg-f16-dcs {
+  background-color: #1a1a1a;
+}
+
+.dark .bg-f16-bms {
+  background-color: #0f1419;
+}
+
+.bg-f16-odd-row {
+  background-color: var(--f16-odd-row);
+}
+
+.bg-f16-even-row {
+  background-color: var(--f16-even-row);
+}
+
+.bg-f16-error {
+  background-color: var(--f16-error);
+}
+
+.text-f16-primary {
+  color: var(--f16-primary);
+}
+
+.border-f16-primary {
+  border-color: var(--f16-primary);
+}
+
+/* New theme-aware utility classes */
+.bg-f16-app {
+  background-color: var(--f16-bg-primary);
+}
+
+.bg-f16-surface {
+  background-color: var(--f16-bg-secondary);
+}
+
+.bg-f16-elevated {
+  background-color: var(--f16-bg-tertiary);
+}
+
+.text-f16-primary-text {
+  color: var(--f16-text-primary);
+}
+
+.text-f16-secondary-text {
+  color: var(--f16-text-secondary);
+}
+
+.text-f16-muted-text {
+  color: var(--f16-text-muted);
+}
+
+.border-f16-primary-border {
+  border-color: var(--f16-border-primary);
+}
+
+.border-f16-secondary-border {
+  border-color: var(--f16-border-secondary);
+}
+
+.f16-logo img {
+  object-fit: contain;
+/* or
+  object-fit: cover; */
+}
+
+/* Modern input styling with theme support */
+.f16-input {
+  @apply px-3 py-2 rounded-lg;
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  @apply transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border: 1px solid var(--f16-border-primary);
+  color: var(--f16-text-primary);
+}
+
+.f16-input:focus {
+  border-color: var(--f16-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.f16-select {
+  @apply px-3 py-2 rounded-lg;
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  @apply transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border: 1px solid var(--f16-border-primary);
+  color: var(--f16-text-primary);
+}
+
+.f16-select:focus {
+  border-color: var(--f16-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.f16-button {
+  @apply px-4 py-2 rounded-lg font-medium;
+  @apply transition-all duration-200;
+  @apply hover:shadow-md;
+}
+
+.f16-button-primary {
+  @apply px-4 py-2 rounded-lg font-medium;
+  @apply transition-all duration-200;
+  @apply hover:shadow-md;
+  @apply text-white;
+  background-color: var(--f16-primary);
+}
+
+.f16-button-primary:hover {
+  background-color: var(--f16-primary-dark);
+}
+
+.f16-button-secondary {
+  @apply px-4 py-2 rounded-lg font-medium;
+  @apply transition-all duration-200;
+  @apply hover:shadow-md;
+  background-color: var(--f16-bg-tertiary);
+  color: var(--f16-text-primary);
+  border: 1px solid var(--f16-border-primary);
+}
+
+.f16-button-secondary:hover {
+  background-color: var(--f16-bg-secondary);
+  box-shadow: 0 4px 6px var(--f16-shadow);
+}
+
+.f16-checkbox {
+  @apply w-4 h-4 rounded;
+  @apply focus:ring-2;
+  background-color: var(--f16-bg-secondary);
+  border: 1px solid var(--f16-border-primary);
+  color: var(--f16-primary);
+  accent-color: var(--f16-primary);
+}
+
+.f16-checkbox:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.f16-slider {
+  @apply w-full h-2 rounded-lg appearance-none cursor-pointer;
+  @apply transition-all duration-200;
+  background-color: var(--f16-bg-tertiary);
+}
+
+.f16-slider::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 rounded-full cursor-pointer;
+  @apply border-2 shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-primary);
+}
+
+.f16-slider::-webkit-slider-thumb:hover {
+  @apply shadow-lg transform scale-110;
+  background-color: var(--f16-primary);
+}
+
+.f16-slider::-moz-range-thumb {
+  @apply w-5 h-5 rounded-full cursor-pointer border-2;
+  @apply shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-primary);
+  appearance: none;
+}
+
+.f16-slider::-moz-range-thumb:hover {
+  @apply shadow-lg transform scale-110;
+  background-color: var(--f16-primary);
+}
+
+.f16-slider::-webkit-slider-track {
+  @apply w-full h-2 rounded-lg;
+  background-color: var(--f16-bg-tertiary);
+}
+
+.f16-slider::-moz-range-track {
+  @apply w-full h-2 rounded-lg border-none;
+  background-color: var(--f16-bg-tertiary);
+}
+
+.f16-card {
+  @apply rounded-lg shadow-md p-6 mb-4;
+  background-color: var(--f16-bg-secondary);
+  border: 1px solid var(--f16-border-primary);
+  box-shadow: 0 4px 6px var(--f16-shadow);
+}
+
+.f16-table {
+  @apply w-full border-collapse rounded-lg overflow-hidden shadow-sm;
+  background-color: var(--f16-bg-secondary);
+}
+
+.f16-table-header {
+  @apply text-white px-4 py-3 text-left font-medium;
+  background-color: var(--f16-primary);
+}
+
+.f16-table-cell {
+  @apply px-4 py-3;
+  border-bottom: 1px solid var(--f16-border-primary);
+  color: var(--f16-text-primary);
+}
+
+.f16-table-row-odd {
+  background-color: var(--f16-odd-row);
+}
+
+.f16-table-row-even {
+  background-color: var(--f16-even-row);
+}
+
+/* Responsive grid for form elements */
+.f16-form-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.f16-form-section {
+  @apply mb-6;
+}
+
+.f16-form-label {
+  @apply block text-sm font-medium mb-2;
+  color: var(--f16-text-secondary);
+}
+
+.f16-fieldset {
+  @apply rounded-lg p-4 mb-4;
+  border: 1px solid var(--f16-border-primary);
+  background-color: var(--f16-bg-secondary);
+}
+
+.f16-legend {
+  @apply text-lg font-semibold mb-2 px-2;
+  color: var(--f16-primary);
+}
+
+/* Animation utilities */
+.f16-fade-in {
+  @apply transition-opacity duration-300 ease-in-out;
+}
+
+.f16-slide-down {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Error state */
+.f16-error-input {
+  @apply focus:ring-red-500;
+  border-color: #ef4444 !important;
+  background-color: var(--f16-error);
+}
+
+/* Modern shadows with theme support */
+.f16-shadow-sm {
+  box-shadow: 0 1px 2px var(--f16-shadow);
+}
+
+.f16-shadow-md {
+  box-shadow: 0 4px 6px var(--f16-shadow);
+}
+
+.f16-shadow-lg {
+  box-shadow: 0 10px 15px var(--f16-shadow);
+}
+
+/* Theme toggle button styles */
+.f16-theme-toggle {
+  @apply p-2 rounded-lg transition-all duration-200;
+  background-color: var(--f16-bg-tertiary);
+  border: 1px solid var(--f16-border-primary);
+  color: var(--f16-text-secondary);
+}
+
+.f16-theme-toggle:hover {
+  background-color: var(--f16-bg-secondary);
+  color: var(--f16-text-primary);
+  box-shadow: 0 2px 4px var(--f16-shadow);
+}
+
+/* Slider state variations with theme support */
+.f16-slider-inactive {
+  @apply w-full h-2 rounded-lg appearance-none cursor-pointer;
+  @apply transition-all duration-200;
+  background-color: var(--f16-bg-tertiary);
+}
+
+.f16-slider-inactive::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 rounded-full cursor-pointer;
+  @apply border-2 shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-border-secondary);
+}
+
+.f16-slider-inactive::-webkit-slider-thumb:hover {
+  @apply shadow-lg transform scale-105;
+}
+
+.f16-slider-inactive::-moz-range-thumb {
+  @apply w-5 h-5 rounded-full cursor-pointer border-2;
+  @apply shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-border-secondary);
+  appearance: none;
+}
+
+.f16-slider-inactive::-moz-range-thumb:hover {
+  @apply shadow-lg transform scale-105;
+}
+
+.f16-slider-inactive::-webkit-slider-track {
+  @apply w-full h-2 rounded-lg;
+  background-color: var(--f16-bg-tertiary);
+}
+
+.f16-slider-inactive::-moz-range-track {
+  @apply w-full h-2 rounded-lg border-none;
+  background-color: var(--f16-bg-tertiary);
+}
+
+.f16-slider-active {
+  @apply w-full h-2 rounded-lg appearance-none cursor-pointer;
+  @apply transition-all duration-200;
+  background-color: var(--f16-primary);
+}
+
+.f16-slider-active::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 rounded-full cursor-pointer;
+  @apply border-2 shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-primary-dark);
+}
+
+.f16-slider-active::-webkit-slider-thumb:hover {
+  @apply shadow-lg transform scale-105;
+  background-color: var(--f16-primary);
+}
+
+.f16-slider-active::-moz-range-thumb {
+  @apply w-5 h-5 rounded-full cursor-pointer border-2;
+  @apply shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-primary-dark);
+  appearance: none;
+}
+
+.f16-slider-active::-moz-range-thumb:hover {
+  @apply shadow-lg transform scale-105;
+  background-color: var(--f16-primary);
+}
+
+.f16-slider-active::-webkit-slider-track {
+  @apply w-full h-2 rounded-lg;
+  background-color: var(--f16-primary);
+}
+
+.f16-slider-active::-moz-range-track {
+  @apply w-full h-2 rounded-lg border-none;
+  background-color: var(--f16-primary);
+}
+
+/* Dynamic progressive fill slider with theme support */
+.f16-slider-dynamic {
+  @apply w-full h-2 rounded-lg appearance-none cursor-pointer;
+  @apply transition-all duration-200;
+  /* Blue fill from left based on slider value, gray for remainder */
+  background: linear-gradient(to right, 
+    var(--f16-primary) 0%, 
+    var(--f16-primary) calc(var(--slider-intensity, 0) * 100%), 
+    var(--f16-bg-tertiary) calc(var(--slider-intensity, 0) * 100%), 
+    var(--f16-bg-tertiary) 100%);
+}
+
+.f16-slider-dynamic::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 rounded-full cursor-pointer;
+  @apply border-2 shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-primary-dark);
+}
+
+.f16-slider-dynamic::-webkit-slider-thumb:hover {
+  background-color: var(--f16-primary);
+  @apply shadow-lg transform scale-105;
+}
+
+.f16-slider-dynamic::-moz-range-thumb {
+  @apply w-5 h-5 rounded-full cursor-pointer border-2;
+  @apply shadow-md transition-all duration-200;
+  background-color: var(--f16-bg-secondary);
+  border-color: var(--f16-primary-dark);
+  appearance: none;
+}
+
+.f16-slider-dynamic::-moz-range-thumb:hover {
+  background-color: var(--f16-primary);
+  @apply shadow-lg transform scale-105;
+}
+
+.f16-slider-dynamic::-webkit-slider-track {
+  @apply w-full h-2 rounded-lg;
+  background: linear-gradient(to right, 
+    var(--f16-primary) 0%, 
+    var(--f16-primary) calc(var(--slider-intensity, 0) * 100%), 
+    var(--f16-bg-tertiary) calc(var(--slider-intensity, 0) * 100%), 
+    var(--f16-bg-tertiary) 100%);
+}
+
+.f16-slider-dynamic::-moz-range-track {
+  @apply w-full h-2 rounded-lg border-none;
+  background: linear-gradient(to right, 
+    var(--f16-primary) 0%, 
+    var(--f16-primary) calc(var(--slider-intensity, 0) * 100%), 
+    var(--f16-bg-tertiary) calc(var(--slider-intensity, 0) * 100%), 
+    var(--f16-bg-tertiary) 100%);
+}
+
+

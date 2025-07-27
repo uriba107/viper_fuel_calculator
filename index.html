@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viper Fuel Planner</title>
+    
+    <!-- Critical resource hints for better loading -->
+    <link rel="preload" href="/src/main.js" as="script" crossorigin>
+    <link rel="modulepreload" href="/src/main.js">
+    
+    <!-- Prevent FOUC with basic styling -->
+    <style>
+      #app {
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      
+      /* Loading state to prevent layout shift */
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #f8fafc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Fallback content while app loads -->
+      <div class="loading">
+        <div>Loading Viper Fuel Planner...</div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
